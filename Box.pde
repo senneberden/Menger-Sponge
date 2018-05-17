@@ -14,10 +14,10 @@ class Box {
       for (int j = -1; j <= 1; j++) {
         for (int k = -1; k <= 1; k++) {
           int c_;
-          c_ = 200;
+          c_ = 255;
           int sum = abs(i) + abs(j) + abs(k);
           if (sum > 1) {
-            c_ = 100;
+            c_ = 0;
           }
           float newR = r/3;
           Box b = new Box(pos.x + i*newR, pos.y + j*newR, pos.z + k*newR, newR);
@@ -30,7 +30,7 @@ class Box {
   }
 
   void show() {
-   fill(c);
+    fill(255-c, c, 0, 25);
     pushMatrix();
     translate(pos.x, pos.y, pos.z);
     box(r);
