@@ -20,12 +20,16 @@ void mousePressed() {
 
 void draw() {
   background(0);
+  noStroke();
   lights();
+  
   translate(width/2, height/2);
   rotateX(a);
   rotateY(a/2);
+  rotateZ(a/4);
+  
   for (Box b_ : sponge) {
-    b_.show();
+   b_.show();
   }
   a+=0.01;
 }
