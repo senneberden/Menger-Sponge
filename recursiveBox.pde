@@ -1,18 +1,18 @@
 float a = 0;
-Box b;
-ArrayList<Box> sponge;
+CustomBox b;
+ArrayList<CustomBox> sponge;
 void setup() {
   size(800, 800, P3D);
-  b = new Box(0, 0, 0, 400);
-  sponge = new ArrayList<Box>();
+  b = new CustomBox(0, 0, 0, 400);
+  sponge = new ArrayList<CustomBox>();
   sponge.add(b);
 }
 
 void mousePressed() {
 
-  ArrayList<Box> next = new ArrayList<Box>();
-  for (Box b_ : sponge) {
-    ArrayList<Box> newBoxes = b_.generate();
+  ArrayList<CustomBox> next = new ArrayList<CustomBox>();
+  for (CustomBox b_ : sponge) {
+    ArrayList<CustomBox> newBoxes = b_.generate();
     next.addAll(newBoxes);
   }
   sponge = next;
@@ -28,7 +28,7 @@ void draw() {
   rotateY(a/2);
   rotateZ(a/4);
   
-  for (Box b_ : sponge) {
+  for (CustomBox b_ : sponge) {
    b_.show();
   }
   a+=0.01;

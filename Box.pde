@@ -1,16 +1,16 @@
-class Box {
+class CustomBox {
   PVector pos;
   float r;
   int[] c = {255, 0, 0};
-  int alpha = 25;
+  int alpha = 50;
 
-  Box(float x, float y, float z, float r_) {
+  CustomBox(float x, float y, float z, float r_) {
     pos = new PVector(x, y, z);
     r = r_;
   }
 
-  ArrayList<Box> generate() {
-    ArrayList<Box> boxes = new ArrayList<Box>();
+  ArrayList<CustomBox> generate() {
+    ArrayList<CustomBox> boxes = new ArrayList<CustomBox>();
     for (int i  = -1; i <= 1; i++) {
       for (int j = -1; j <= 1; j++) {
         for (int k = -1; k <= 1; k++) {
@@ -22,7 +22,7 @@ class Box {
             c_[1] = 255;
           }
           float newR = r/3;
-          Box b = new Box(pos.x + i*newR, pos.y + j*newR, pos.z + k*newR, newR);
+          CustomBox b = new CustomBox(pos.x + i*newR, pos.y + j*newR, pos.z + k*newR, newR);
           b.c = c_;
           boxes.add(b);
         }

@@ -1,4 +1,4 @@
-class Box1 extends Box {
+class Box1 extends CustomBox {
   Box1(float x, float y, float z, float r_) {
     super(x, y, z, r_);
     int[] c_ = {255, 255, 255};
@@ -7,8 +7,8 @@ class Box1 extends Box {
   }
 
   @Override
-    ArrayList<Box> generate() {
-    ArrayList<Box> boxes = new ArrayList<Box>();
+    ArrayList<CustomBox> generate() {
+    ArrayList<CustomBox> boxes = new ArrayList<CustomBox>();
     for (int i  = -1; i <= 1; i++) {
       for (int j = -1; j <= 1; j++) {
         for (int k = -1; k <= 1; k++) {
